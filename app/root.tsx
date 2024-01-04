@@ -1,4 +1,4 @@
-import { Outlet, LiveReload, Links } from "@remix-run/react";
+import { Outlet, LiveReload, Links, Scripts } from "@remix-run/react";
 import Header, { links as headerLinks } from "./components/Header";
 import globalStyles from "./styles/globals.css";
 
@@ -42,6 +42,7 @@ const Document = ({
 			</head>
 			<body>
 				<Layout>{children}</Layout>
+				<Scripts />
 			</body>
 		</html>
 	);
@@ -56,4 +57,13 @@ const App = () => {
 	);
 };
 
+/* export const ErrorBoundary = (error: Error) => {
+	console.error(error);
+	return (
+		<Document title="Oops!">
+			<div className="error">Oops! Something went incredibly wrong</div>
+		</Document>
+	);
+};
+ */
 export default App;
