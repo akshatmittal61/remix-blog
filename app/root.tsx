@@ -1,8 +1,11 @@
 import { Outlet, LiveReload, Links } from "@remix-run/react";
-import { Link } from "react-router-dom";
+import Header, { links as headerLinks } from "./components/Header";
 import globalStyles from "./styles/globals.css";
 
-export const links = () => [{ rel: "stylesheet", href: globalStyles }];
+export const links = () => [
+	...headerLinks(),
+	{ rel: "stylesheet", href: globalStyles },
+];
 
 export const meta = () => ({
 	titleTemplate: "%s | Remix Starter",
@@ -13,25 +16,7 @@ export const meta = () => ({
 const Layout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<>
-			<nav className="nav">
-				<Link to="/" className="nav-logo">
-					REMIX
-				</Link>
-				<ul className="nav-list">
-					<li className="nav-list-item">
-						<Link to="/">Home</Link>
-					</li>
-					<li className="nav-list-item">
-						<Link to="/blogs">Blogs</Link>
-					</li>
-					<li className="nav-list-item">
-						<Link to="/about">About</Link>
-					</li>
-					<li className="nav-list-item">
-						<Link to="/contact">Contact</Link>
-					</li>
-				</ul>
-			</nav>
+			<Header />
 			<main>{children}</main>
 		</>
 	);
