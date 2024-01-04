@@ -1,5 +1,14 @@
-import { Outlet, LiveReload } from "@remix-run/react";
+import { Outlet, LiveReload, Links } from "@remix-run/react";
 import { Link } from "react-router-dom";
+import globalStyles from "./styles/globals.css";
+
+export const links = () => [{ rel: "stylesheet", href: globalStyles }];
+
+export const meta = () => ({
+	titleTemplate: "%s | Remix Starter",
+	description: "A starter for Remix",
+	viewport: "width=device-width, initial-scale=1.0",
+});
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
 	return (
@@ -11,6 +20,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 				<ul className="nav-list">
 					<li className="nav-list-item">
 						<Link to="/">Home</Link>
+					</li>
+					<li className="nav-list-item">
+						<Link to="/blogs">Blogs</Link>
 					</li>
 					<li className="nav-list-item">
 						<Link to="/about">About</Link>
@@ -40,6 +52,7 @@ const Document = ({
 					name="viewport"
 					content="width=device-width, initial-scale=1.0"
 				/>
+				<Links />
 				<title>{title}</title>
 			</head>
 			<body>
