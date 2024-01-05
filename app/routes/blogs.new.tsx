@@ -58,14 +58,6 @@ const NewBlogPage: React.FC = () => {
 					</button>
 				</div>
 			</form>
-			<button
-				className="btn"
-				onClick={() => {
-					throw new Error("Gen Error");
-				}}
-			>
-				Gen Error
-			</button>
 		</main>
 	);
 };

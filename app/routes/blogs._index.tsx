@@ -23,7 +23,7 @@ const Blogs: React.FC = () => {
 					<div key={blog.slug} className="blog-card">
 						<Link
 							className="blog-card-title"
-							to={`/blogs/${blog.id}`}
+							to={`/blogs/${blog.slug}`}
 						>
 							{blog.title}
 						</Link>
