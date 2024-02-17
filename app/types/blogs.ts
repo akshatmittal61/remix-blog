@@ -4,4 +4,5 @@ export interface IBlog {
 	slug: string;
 	date: string;
 	author: string;
+	likes: number;
 }

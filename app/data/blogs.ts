@@ -8,6 +8,7 @@ const blogs: IBlog[] = [
 		slug: "how-to-use-nextjs-with-tailwindcss",
 		date: "2021-08-24",
 		author: "Akshat Mittal",
+		likes: 10,
 	},
 	{
 		title: "React Hooks: useState",
@@ -16,6 +17,7 @@ const blogs: IBlog[] = [
 		slug: "react-hooks-usestate",
 		date: "2022-04-24",
 		author: "Akshat Mittal",
+		likes: 20,
 	},
 ];
 
